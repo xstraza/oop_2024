@@ -2,14 +2,25 @@ package muzickiStudio;
 
 public class Instrument extends Oprema {
     private double osnovnaCena;
+    private KlasaInstrumenta klasa;
 
-    public Instrument(String naziv, double osnovnaCena) {
+    public Instrument(String naziv, KlasaInstrumenta klasa, double osnovnaCena) {
         super(naziv);
+        this.klasa = klasa;
         this.osnovnaCena = osnovnaCena;
     }
 
-    public double cena(int x) {
-        return 0;
+    public double getOsnovnaCena() {
+        return osnovnaCena;
+    }
+
+    public KlasaInstrumenta getKlasa() {
+        return klasa;
+    }
+
+    @Override
+    public double cena(int brojSati) {
+        return brojSati * osnovnaCena * klasa.getKoeficijent();
     }
 
     @Override
@@ -19,8 +30,6 @@ public class Instrument extends Oprema {
 
     @Override
     public String toString() {
-        return "Instrument{" +
-                "osnovnaCena=" + osnovnaCena +
-                '}';
+        return getNaziv() + " " + klasa.name() + " klase";
     }
 }

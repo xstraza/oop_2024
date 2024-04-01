@@ -8,8 +8,9 @@ public class Ozvucenje extends Oprema {
         this.cena = cena;
     }
 
-    public double cena(int x) {
-        return 0;
+    @Override
+    public double cena(int brojSati) {
+        return cena * brojSati;
     }
 
     @Override
@@ -19,8 +20,6 @@ public class Ozvucenje extends Oprema {
 
     @Override
     public String toString() {
-        return "Instrument{" +
-                "cena=" + cena +
-                '}';
+        return getNaziv();
     }
 }

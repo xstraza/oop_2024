@@ -15,4 +15,29 @@ public class Orkestar {
         this.minimalnaKlasa = minimalnaKlasa;
         this.prvoBolji = prvoBolji;
     }
+
+    public String getNaziv() {
+        return naziv;
+    }
+
+    public KlasaInstrumenta getMinimalnaKlasa() {
+        return minimalnaKlasa;
+    }
+
+    public List<String> getInstrumenti() {
+        return instrumenti;
+    }
+
+    public List<String> getOzvucenje() {
+        return ozvucenje;
+    }
+
+    public boolean isPrvoBolji() {
+        return prvoBolji;
+    }
+
+    @Override
+    public String toString() {
+        return "Orkestar " + naziv;
+    }
 }
