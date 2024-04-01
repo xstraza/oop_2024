@@ -14,11 +14,6 @@ public class Ozvucenje extends Oprema {
     }
 
     @Override
-    public int compareTo(Oprema o) {
-        return 0;
-    }
-
-    @Override
     public String toString() {
         return getNaziv();
     }

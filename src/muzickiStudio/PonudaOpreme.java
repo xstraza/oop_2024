@@ -7,11 +7,13 @@ public class PonudaOpreme implements Procenjivo {
     private List<String> nedostajucaOprema;
     private List<Oprema> opreme;
     private boolean kompletiran;
+    private boolean moguceSnimanjeSpota;
 
     public PonudaOpreme(List<String> nedostajucaOprema, List<Oprema> opreme) {
         this.nedostajucaOprema = nedostajucaOprema;
         this.opreme = opreme;
         this.kompletiran = nedostajucaOprema.isEmpty();
+        this.moguceSnimanjeSpota = false;
     }
 
     public void ispisOpreme() {
@@ -34,5 +36,25 @@ public class PonudaOpreme implements Procenjivo {
             suma += oprema.cena(brojSati);
         }
         return suma;
+    }
+
+    public List<String> getNedostajucaOprema() {
+        return nedostajucaOprema;
+    }
+
+    public List<Oprema> getOpreme() {
+        return opreme;
+    }
+
+    public boolean isKompletiran() {
+        return kompletiran;
+    }
+
+    public boolean isMoguceSnimanjeSpota() {
+        return moguceSnimanjeSpota;
+    }
+
+    public void setMoguceSnimanjeSpota(boolean moguceSnimanjeSpota) {
+        this.moguceSnimanjeSpota = moguceSnimanjeSpota;
     }
 }

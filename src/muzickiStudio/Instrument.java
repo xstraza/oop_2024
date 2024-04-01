@@ -24,11 +24,6 @@ public class Instrument extends Oprema {
     }
 
     @Override
-    public int compareTo(Oprema o) {
-        return 0;
-    }
-
-    @Override
     public String toString() {
         return getNaziv() + " " + klasa.name() + " klase";
     }
