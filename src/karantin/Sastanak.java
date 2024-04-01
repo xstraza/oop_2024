@@ -9,6 +9,7 @@ public class Sastanak implements Comparable<Sastanak> {
     private int satZavrsetka;
     private boolean aktivan;
     private List<UcesnikSastanka> ucesnici = new ArrayList<>();
+    private List<Snimak> snimci = new ArrayList<>();
     private Nastavnik domacin;
 
     public Sastanak(String predmet, int satPocetka, int satZavrsetka) {
