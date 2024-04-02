@@ -1,22 +1,44 @@
 package predstava;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class Muzicar {
+public class Muzicar extends Ucesnik {
     private boolean vokal;
     private List<Instrument> instrumenti;
 
-    public Muzicar(boolean vokal, List<Instrument> instrumenti) {
+    public Muzicar(String ime, boolean vokal, List<Instrument> instrumenti) {
+        super(ime);
         this.vokal = vokal;
         this.instrumenti = instrumenti;
     }
 
     @Override
     public String toString() {
-        return "Muzicar{" +
-                "vokal=" + vokal +
-                ", instrumenti=" + instrumenti +
-                '}';
+        StringBuilder sb = new StringBuilder("MUZICAR - ");
+        if (vokal) {
+            sb.append("VOKAL,");
+        }
+        if (instrumenti.contains(Instrument.KLAVIR)) {
+            sb.append("PIJANISTA,");
+        }
+        if (instrumenti.contains(Instrument.GITARA)) {
+            sb.append("GITARISTA,");
+        }
+        if (instrumenti.contains(Instrument.BUBANJ)) {
+            sb.append("BUBNJAR,");
+        }
+        if (instrumenti.contains(Instrument.VIOLINA)) {
+            sb.append("VIOLINISTA,");
+        }
+        String string = sb.toString();
+        return string.substring(0, string.length() - 1); //izbacimo poslednji zarez
+    }
+
+    public boolean isVokal() {
+        return vokal;
+    }
+
+    public List<Instrument> getInstrumenti() {
+        return instrumenti;
     }
 }

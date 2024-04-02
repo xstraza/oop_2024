@@ -4,17 +4,22 @@ public class Plesac extends Ucesnik {
     private String uloga;
     private Velicina velicina;
 
-    public Plesac(String ime, String uloga, Velicina velicina) {
+    public Plesac(String ime, boolean solista, Velicina velicina) {
         super(ime);
-        this.uloga = uloga;
+        this.uloga = solista ? "SOLISTA" : "PRATNJA";
         this.velicina = velicina;
     }
 
     @Override
     public String toString() {
-        return "Plesac{" +
-                "uloga='" + uloga + '\'' +
-                ", velicina=" + velicina +
-                '}';
+        return "PLESAC-" + uloga;
+    }
+
+    public String getUloga() {
+        return uloga;
+    }
+
+    public Velicina getVelicina() {
+        return velicina;
     }
 }
