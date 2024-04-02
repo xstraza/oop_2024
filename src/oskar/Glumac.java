@@ -18,7 +18,7 @@ public class Glumac extends ClanEkipe {
 
     @Override
     public void predstavi() {
-
+        System.out.println("predstavlja se glumac");
     }
 
     @Override

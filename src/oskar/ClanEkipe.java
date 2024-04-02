@@ -26,4 +26,20 @@ public abstract class ClanEkipe implements Nominovan {
                 ", pol=" + pol +
                 '}';
     }
+
+    public String getIme() {
+        return ime;
+    }
+
+    public String getPrezime() {
+        return prezime;
+    }
+
+    public Date getDatumRodjenja() {
+        return datumRodjenja;
+    }
+
+    public Pol getPol() {
+        return pol;
+    }
 }
