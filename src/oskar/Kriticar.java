@@ -14,6 +14,10 @@ public class Kriticar {
         this.reputacija = reputacija;
     }
 
+    public void oceniFilm(Film film, double ocena) {
+        film.getKritike().add(new Kritika(film, this, ocena));
+    }
+
     public void pohvaliKriticara(Kriticar kriticar) {
         kriticar.povecajReputaciju(this.reputacija * 0.1);
     }

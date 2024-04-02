@@ -1,8 +1,8 @@
 package oskar;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.*;
 
 public class FilmskaAkademija {
     private final double MIN_REJTING = 5;
@@ -87,6 +87,57 @@ public class FilmskaAkademija {
         System.out.println("kategorija filmovi");
         for (Film film : filmovi) {
             film.predstavi();
+        }
+    }
+
+    public String generisiIzvestajNominacija() {
+        StringBuilder izvestaj = new StringBuilder();
+
+        izvestaj.append("NOMINACIJE:\n");
+
+        izvestaj.append("Kategorija Glumci:\n");
+        for (Glumac glumac : glumci) {
+            izvestaj.append(glumac.toString()).append("\n");
+        }
+
+        izvestaj.append("Kategorija Glumice:\n");
+        for (Glumac glumica : glumice) {
+            izvestaj.append(glumica.toString()).append("\n");
+        }
+
+        izvestaj.append("Kategorija Reziseri (sortirano opadajuće po produktivnosti):\n");
+        Collections.sort(reziseri, Comparator.comparingInt(Reziser::getBrojFilmova).reversed());
+        for (Reziser reziser : reziseri) {
+            izvestaj.append(reziser.toString()).append("\n");
+        }
+
+        izvestaj.append("Kategorija Filmovi (sortirano opadajuće po rejtingu):\n");
+        Collections.sort(filmovi, Comparator.comparingDouble(Film::izracunajRatingFilma).reversed());
+        for (Film film : filmovi) {
+            izvestaj.append(film.toString()).append("\n");
+        }
+
+        return izvestaj.toString();
+    }
+
+    public void generisiStatistikuPoZanrovima() {
+        Map<Zanr, Integer> statistika = new HashMap<>();
+        for (Film film : filmovi) {
+            Zanr zanr = film.getZanr();
+            statistika.put(zanr, statistika.getOrDefault(zanr, 0) + 1);
+        }
+
+        System.out.println("Statistika nominovanih filmova po žanrovima:");
+        for (Map.Entry<Zanr, Integer> entry : statistika.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue() + " nominovanih filmova");
+        }
+    }
+
+    public void generisiIzvestajUFajl() {
+        try (FileWriter writer = new FileWriter("nominovani.txt")) {
+            writer.write(generisiIzvestajNominacija());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

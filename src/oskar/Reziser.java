@@ -32,4 +32,8 @@ public class Reziser extends ClanEkipe {
     public void povecajBrojFilmova() {
         this.brojFilmova++;
     }
+
+    public int getBrojFilmova() {
+        return brojFilmova;
+    }
 }
