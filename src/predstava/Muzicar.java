@@ -2,7 +2,7 @@ package predstava;
 
 import java.util.List;
 
-public class Muzicar extends Ucesnik {
+public class Muzicar extends Ucesnik implements Comparable<Muzicar> {
     private boolean vokal;
     private List<Instrument> instrumenti;
 
@@ -40,5 +40,10 @@ public class Muzicar extends Ucesnik {
 
     public List<Instrument> getInstrumenti() {
         return instrumenti;
+    }
+
+    @Override
+    public int compareTo(Muzicar other) {
+        return this.getIme().compareTo(other.getIme());
     }
 }

@@ -7,13 +7,19 @@ public class PlesnaNumera implements Izodjenje {
     private String naziv;
     private List<Ucesnik> ucesnici = new ArrayList<>();
 
-    public PlesnaNumera() {
+    public PlesnaNumera(String naziv) {
+        this.naziv = naziv;
     }
 
 
     @Override
     public void dodajUcesnika(Ucesnik ucesnik) {
         ucesnici.add(ucesnik);
+    }
+
+    @Override
+    public List<Ucesnik> ucesniciIzvodjenja() {
+        return ucesnici;
     }
 
     @Override
@@ -39,6 +45,11 @@ public class PlesnaNumera implements Izodjenje {
     public void izvedi() {
         System.out.println("Izvodjenje plesne numere " + naziv);
         ispisiUcesnike();
+    }
+
+    @Override
+    public TipaIzvodjenja getTipIzvodjenja() {
+        return TipaIzvodjenja.PLESNA_NUMERA;
     }
 
     private void ispisiUcesnike() {
@@ -79,19 +90,20 @@ public class PlesnaNumera implements Izodjenje {
     }
 
     public boolean proveriKostime(List<Kostim> kostimi) {
+        List<Kostim> kostims = new ArrayList<>(kostimi);
         for (Ucesnik ucesnik : ucesnici) {
             if (ucesnik instanceof Plesac) {
                 Kostim zaSkloniti = null;
                 Plesac plesac = (Plesac) ucesnik;
                 if (plesac.getUloga().equals("SOLISTA")) {
-                    for (Kostim kostim : kostimi) {
+                    for (Kostim kostim : kostims) {
                         if (kostim.getVelicina().equals(plesac.getVelicina()) && kostim.isSolisticki())  {
                             zaSkloniti = kostim;
                             break;
                         }
                     }
                 } else {
-                    for (Kostim kostim : kostimi) {
+                    for (Kostim kostim : kostims) {
                         if (kostim.getVelicina().equals(plesac.getVelicina()))  {
                             zaSkloniti = kostim;
                             break;
@@ -101,10 +113,17 @@ public class PlesnaNumera implements Izodjenje {
                 if (zaSkloniti == null) {
                     return false;
                 } else {
-                    kostimi.remove(zaSkloniti);
+                    kostims.remove(zaSkloniti);
                 }
             }
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "PlesnaNumera{" +
+                "naziv='" + naziv + '\'' +
+                '}';
     }
 }
