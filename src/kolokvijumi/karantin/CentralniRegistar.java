@@ -1,4 +1,4 @@
-package karantin;
+package kolokvijumi.karantin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +62,6 @@ public class CentralniRegistar {
     }
 
     public void stampajPrisustvoSortirano() {
-
+        //todo
     }
 }

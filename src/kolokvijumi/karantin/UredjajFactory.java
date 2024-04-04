@@ -1,4 +1,4 @@
-package karantin;
+package kolokvijumi.karantin;
 
 public class UredjajFactory {
 }

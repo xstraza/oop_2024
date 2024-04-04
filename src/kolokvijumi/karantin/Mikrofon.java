@@ -1,4 +1,4 @@
-package karantin;
+package kolokvijumi.karantin;
 
 public class Mikrofon extends UredjajZaSnimanje {
     public Mikrofon(String proizvodjac, String vlasnik) {

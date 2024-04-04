@@ -1,4 +1,4 @@
-package karantin;
+package kolokvijumi.karantin;
 
 public class Student extends UcesnikSastanka {
     public Student(String korisnickoIme) {

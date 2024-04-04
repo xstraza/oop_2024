@@ -1,4 +1,4 @@
-package karantin;
+package kolokvijumi.karantin;
 
 public class Kamera extends UredjajZaSnimanje {
     public Kamera(String proizvodjac, String vlasnik) {

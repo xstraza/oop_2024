@@ -1,4 +1,4 @@
-package karantin;
+package kolokvijumi.karantin;
 
 
 import java.util.Objects;
