@@ -100,12 +100,14 @@ public class Stringovi {
     }
 
     private static String changeWord(String wordToChange, int changeType) {
-        return switch (changeType) { //switch case funkcionise isto kao u c-u
-            case 0 -> capitalizeWord(wordToChange); //ovo je noviji nacin zapisivanja swithca, iz jave 14
-            case 1 -> invertWord(wordToChange); // u starijim verzijama jave je izgledao kao i u c-u, sa break-om u svakoj grani
-            case 2 -> permuteWord(wordToChange);
-            default -> null; //mozemo imati default granu koja se izvrsi ako se ne udje ni u jednu drugu granu
-        };
+//        return switch (changeType) { //switch case funkcionise isto kao u c-u
+//            case 0: capitalizeWord(wordToChange); //ovo je noviji nacin zapisivanja swithca, iz jave 14
+//                break;
+//            case 1: invertWord(wordToChange);break; // u starijim verzijama jave je izgledao kao i u c-u, sa break-om u svakoj grani
+//            case 2: permuteWord(wordToChange);
+//            default: null; //mozemo imati default granu koja se izvrsi ako se ne udje ni u jednu drugu granu
+//        };
+        return null;
     }
 
     private static String permuteWord(String wordToPermute) {

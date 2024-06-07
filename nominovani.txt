@@ -1,0 +1,15 @@
+NOMINACIJE:
+Kategorija Glumci:
+Glumac{lepGlas=false}
+Glumac{lepGlas=true}
+Kategorija Glumice:
+Glumac{lepGlas=false}
+Glumac{lepGlas=false}
+Kategorija Reziseri (sortirano opadajuće po produktivnosti):
+ClanEkipe{ime='r1', preime='rr1', datumRodjenja=Tue Apr 02 08:00:06 CEST 2024, pol=MUSKI}
+ClanEkipe{ime='r2', preime='rr2', datumRodjenja=Tue Apr 02 08:00:06 CEST 2024, pol=ZENSKI}
+ClanEkipe{ime='r3', preime='rr3', datumRodjenja=Tue Apr 02 08:00:06 CEST 2024, pol=MUSKI}
+Kategorija Filmovi (sortirano opadajuće po rejtingu):
+Film{naziv='film3', godina=2005, clanoviEkipe=[ClanEkipe{ime='r1', preime='rr1', datumRodjenja=Tue Apr 02 08:00:06 CEST 2024, pol=MUSKI}, Glumac{lepGlas=false}], zanr=AVANTURA}
+Film{naziv='film2', godina=1990, clanoviEkipe=[ClanEkipe{ime='r1', preime='rr1', datumRodjenja=Tue Apr 02 08:00:06 CEST 2024, pol=MUSKI}, Glumac{lepGlas=true}], zanr=MJUZIKL}
+Film{naziv='film1', godina=2024, clanoviEkipe=[ClanEkipe{ime='r1', preime='rr1', datumRodjenja=Tue Apr 02 08:00:06 CEST 2024, pol=MUSKI}, Glumac{lepGlas=true}, Glumac{lepGlas=false}], zanr=HOROR}
